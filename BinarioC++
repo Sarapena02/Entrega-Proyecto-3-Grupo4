@@ -1,0 +1,219 @@
+#include <iostream>
+#include <fstream>
+#include <strings.h>
+using namespace std;
+
+
+int main (){
+	int cont=0;
+	string entry;
+	ifstream f("Finalsheet.txt");
+	
+	bool done=false;
+	while(getline(f,entry)){
+		done=false;
+		
+		if (entry=="MOV ACC,A"){
+			cout<<"0b00001000"<<endl;done=true;
+		}
+		
+		
+		//OPCODES Y DIRECCIONES
+		else if (entry=="MOV A,ACC"){
+			
+			cout<<"0b00010000"<<endl;done=true;
+		}
+		
+		else if (entry=="MOV ACC,CTE"){
+			
+			cout<<"0b00011000"<<endl;done=true;
+		}
+		
+		else if (entry=="MOV ACC,[DPTR]"){
+		
+			cout<<"0b00100000"<<endl;done=true;
+		}
+		
+		else if (entry=="MOV DPTR,ACC"){
+			
+			cout<<"0b00101000"<<endl;done=true;
+		}
+		
+		else if (entry=="MOV [DPTR],ACC"){
+			
+			cout<<"0b00110000"<<endl;done=true;
+		}
+		
+		else if (entry=="INV ACC"){
+		
+			cout<<"0b00111000"<<endl;done=true;
+		}
+		
+		else if (entry=="AND ACC,A"){
+		
+			cout<<"0b01000000"<<endl;done=true;
+		}
+		
+		else if (entry=="ADD ACC,A"){
+		
+			cout<<"0b01001000"<<endl;done=true;
+		}
+		
+		else if (entry=="JMP CTE"){
+			
+			cout<<"0b01010000"<<endl;done=true;
+		}
+		
+		else if (entry=="JZ"){
+		
+			cout<<"0b01011000"<<endl;done=true;
+		}
+		
+		else if (entry=="JN CTE"){
+		
+			cout<<"0b01100000"<<endl;done=true;
+		}
+		
+		else if (entry=="JC CTE"){
+		
+			cout<<"0b01101000"<<endl;done=true;
+		}
+		
+		else if (entry=="CALL DIR"){
+			
+			cout<<"0b01001000"<<endl;done=true;
+		}
+		
+		else if (entry=="RET"){
+		
+			cout<<"0b01111000"<<endl;done=true;
+		}
+		
+		else if (entry=="ADD ACC,A"){
+			
+			cout<<"0b01001000"<<endl;done=true;
+		}
+		
+		else if (entry=="XOR ACC,A"){
+	
+			cout<<"0b10100000"<<endl;done=true;
+		}
+		
+		else if (entry=="SLL ACC"){
+			
+			cout<<"0b10010000"<<endl;done=true;
+		}
+		
+		else if (entry=="SRL ACC"){
+		
+			cout<<"0b10011000"<<endl;done=true;
+		}
+		
+		else if (entry=="NEG ACC"){
+		
+			cout<<"0b10001000"<<endl;done=true;
+		}
+		
+		else if (entry=="HALT"){
+	
+			cout<<"0b11111000"<<endl;done=true;
+		}
+		
+		else if (entry=="COND1"){
+	
+			cout<<"0b01111001"<<endl;done=true;
+		}
+		
+		else if (entry=="COND2"){
+	
+			cout<<"0b10000110"<<endl;done=true;
+		}
+		
+		else if (entry=="COND3"){
+	
+			cout<<"0b00100011"<<endl;done=true;
+		}
+		
+		else if (entry=="COND3"){
+	
+			cout<<"0b11111000"<<endl;done=true;
+		}
+		
+		else if (entry=="INIT_LOOP"){
+	
+			cout<<"0b00000000"<<endl;done=true;
+		}
+		
+		else if (entry=="END_LOOP"){
+	
+			cout<<"0b10010100"<<endl;done=true;
+		}
+		else if (entry=="Q_mul"){
+			cout<<"0b10011111"<<endl;done=true;
+		}
+		else if (entry=="Q_1"){
+			cout<<"0b10100000"<<endl;done=true;
+		}
+		else if (entry=="A_mul"){
+			cout<<"0b10011110"<<endl;done=true;
+		}
+		else if (entry=="N"){
+			cout<<"0b10100010"<<endl;done=true;
+		}
+		else if (entry=="M"){
+			cout<<"0b10100001"<<endl;done=true;
+		}
+		
+		else if (entry=="srl_Q_mul"){
+			cout<<"0b01000010"<<endl;done=true;
+		}
+
+		else if (entry=="lit1"){
+			cout<<"0b10100011"<<endl;done=true;
+		}
+		else if (entry=="lit2"){
+			cout<<"0b10100100"<<endl;done=true;
+		}
+		else if (entry=="lit3"){
+			cout<<"0b10100101"<<endl;done=true;
+		}
+		
+		
+		//CONTENIDO DE LOS REGISTROS
+		
+		else if (entry=="-A_mul-"){
+			cout<<"0b00000000"<<endl;done=true;
+		}
+		else if (entry=="-Q_mul-"){
+			cout<<"0b00010000"<<endl;done=true;
+		}
+		else if (entry=="-Q_1-"){
+			cout<<"0b00000000"<<endl;done=true;
+		}
+		else if (entry=="-M-"){
+			cout<<"0b11110000"<<endl;done=true;
+		}
+		else if (entry=="-N-"){
+			cout<<"0b00001000"<<endl;done=true;
+		}
+		else if (entry=="-lit1-"){
+			cout<<"0b10000000"<<endl;done=true;
+		}
+		else if (entry=="-lit2-"){
+			cout<<"0b10000001"<<endl;done=true;
+		}
+		else if (entry=="-lit3-"){
+			cout<<"0b00000001"<<endl;done=true;
+		}
+		
+		
+		
+	
+		
+		if (done==false){
+			cout<<entry<<endl;
+		}
+	cont++;
+		
+	}
+}
